@@ -1,11 +1,8 @@
-# extrassclube.github.io
-Site do Extrassclube
 from zipfile import ZipFile
 import os
 
 site_files = {
-    "index.html": """
-<!DOCTYPE html>
+    "index.html": """<!DOCTYPE html>
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
@@ -14,19 +11,27 @@ site_files = {
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-white text-gray-800">
+
+  <!-- Hero -->
   <section class="bg-red-600 text-white py-20 px-4 text-center">
     <h1 class="text-5xl font-bold mb-4">Extrassclube</h1>
     <p class="text-xl">Transforme seus sonhos em realidade acadêmica.</p>
   </section>
+
+  <!-- Vision Board -->
   <section class="bg-white py-10 px-4 text-center">
     <div class="max-w-3xl mx-auto">
       <img src="assets/visionboard.jpg" alt="Vision Board" class="mx-auto mb-4 rounded shadow-lg">
       <p class="text-lg">Vision board é uma ótima forma de idealizar e visualizar seus sonhos.</p>
     </div>
   </section>
+
+  <!-- Pesquisa -->
   <section class="bg-white py-10 px-4 text-center">
     <input type="text" placeholder="Busque por área, universidade ou prova..." class="border px-4 py-2 rounded w-full max-w-lg">
   </section>
+
+  <!-- Áreas de Estudo -->
   <section class="bg-white py-10 px-4" id="areas">
     <h2 class="text-3xl font-bold text-center mb-8">Áreas de Estudo</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -37,6 +42,8 @@ site_files = {
       </div>
     </div>
   </section>
+
+  <!-- Universidades -->
   <section class="bg-gray-100 py-10 px-4" id="universidades">
     <h2 class="text-3xl font-bold text-center mb-8">Universidades</h2>
     <div class="space-y-4 max-w-4xl mx-auto">
@@ -46,6 +53,8 @@ site_files = {
       </div>
     </div>
   </section>
+
+  <!-- Sobre Mim -->
   <section class="bg-red-600 text-white py-16 px-6 text-center" id="sobre">
     <h2 class="text-3xl font-bold mb-4">Sobre Mim</h2>
     <p class="text-lg max-w-2xl mx-auto leading-relaxed mb-4">
@@ -54,6 +63,8 @@ site_files = {
     <p class="italic mb-4">“A educação transforma, e com as escolhas certas, você pode ir muito mais longe do que imagina.”</p>
     <a href="https://instagram.com/bulla_julia" target="_blank" class="underline">Instagram: @bulla_julia</a>
   </section>
+
+  <!-- Contato -->
   <section class="bg-white py-10 px-4 text-center" id="contato">
     <h2 class="text-2xl font-bold mb-4">Tem alguma dúvida? Nos pergunte!</h2>
     <form action="mailto:juliacaldart@gmail.com" method="POST" enctype="text/plain" class="max-w-md mx-auto space-y-4">
@@ -62,10 +73,11 @@ site_files = {
       <button type="submit" class="bg-red-600 text-white px-6 py-2 rounded">Enviar</button>
     </form>
   </section>
+
 </body>
 </html>
 """,
-    "assets/visionboard.jpg": b"",  # Substitua com sua imagem depois
+    "assets/visionboard.jpg": b"",  # Adicione sua imagem depois
 }
 
 zip_name = "extrassclube_site.zip"
@@ -78,4 +90,4 @@ with ZipFile(zip_name, "w") as zipf:
         zipf.write(filepath)
         os.remove(filepath)
 
-print(f"Arquivo {zip_name} gerado com sucesso!")
+print(f"Arquivo {zip_name} criado com sucesso.")
